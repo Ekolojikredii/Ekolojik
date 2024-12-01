@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekolojik Kredi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sol Bölüm -->
+        <div class="left">
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+            <div id="menu-content" class="menu-content">
+                <a href="javascript:void(0)" onclick="showSection('ekolojik-kredi')">Ekolojik Kredi Nedir?</a>
+                <a href="javascript:void(0)" onclick="showSection('proje-ozeti')">Proje Özeti</a>
+                <a href="javascript:void(0)" onclick="showSection('hazirlayanlar')">Hazırlayanlar</a>
+            </div>
+            <h1>Ekolojik Kredi</h1>
+            <div class="logo">🌲</div>
+        </div>
+
+        <!-- Sağ Bölüm -->
+        <div class="right">
+            <button onclick="showSection('kayit-ol')">Kayıt Ol</button>
+            <button onclick="showSection('bilgilendirme')">Bilgilendirme</button>
+            <button onclick="showSection('veri-giris')">Veri Giriş</button>
+        </div>
+    </div>
+
+    <!-- Bölümler (Sayfa içerikleri) -->
+    <div id="ekolojik-kredi" class="section">
+        <h2>Ekolojik Kredi Nedir?</h2>
+        <p>Ekolojik Kredi, çevre bilincini artırmak ve geri dönüşüm kültürünü yaymak amacıyla bir proje oluşturulmuştur...</p>
+    </div>
+
+    <div id="proje-ozeti" class="section">
+        <h2>Proje Özeti</h2>
+        <p>Ekolojik Kredi Projesi, çevre bilincini artırmak ve okullarda geri dönüşüm kültürünü geliştirmek amacıyla oluşturulmuştur...</p>
+    </div>
+
+    <div id="hazirlayanlar" class="section">
+        <h2>Hazırlayanlar</h2>
+        <p>DANIŞMAN ÖĞRETMEN: OSMAN ONUK</p>
+        <p>ÖĞRENCİLER: MUHAMMEDCAN ARSLANPARÇASI, BİLAL YİĞİT TEZCAN, YAĞIZ EFE YILMAZ</p>
+    </div>
+
+    <div id="kayit-ol" class="section">
+        <h2>Kayıt Ol</h2>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="İsim" required><br>
+            <input type="text" id="surname" placeholder="Soyisim" required><br>
+            <input type="email" id="email" placeholder="E-posta" required><br>
+            <input type="text" id="school" placeholder="Okul" required><br>
+            <input type="text" id="city" placeholder="İl" required><br>
+            <input type="text" id="district" placeholder="İlçe" required><br>
+            <input type="number" id="schoolNumber" placeholder="Okul Numarası" required><br>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </div>
+
+    <div id="bilgilendirme" class="section">
+        <h2>Bilgilendirme</h2>
+        <p>Burada çevre bilinci ve geri dönüşümle ilgili bilgiler yer alacak...</p>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Girişi</h2>
+        <form id="dataForm">
+            <input type="text" id="wasteType" placeholder="Atık Türü" required><br>
+            <input type="number" id="wasteAmount" placeholder="Atık Miktarı (kg)" required><br>
+            <button type="submit">Veri Girişi Yap</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
