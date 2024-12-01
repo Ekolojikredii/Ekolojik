@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ffe6;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left, .right {
+    flex: 1;
+    padding: 20px;
+}
+
+.left {
+    background-color: #d9ffb3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.right {
+    background-color: #b3ff99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hamburger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu-content {
+    display: none;
+    background-color: #e6ffe6;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.menu-content a {
+    display: block;
+    padding: 10px 0;
+    color: #006600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+    background-color: #ccffcc;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #006600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #004d00;
+}
+
+form input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #006600;
+    width: 100%;
+}
