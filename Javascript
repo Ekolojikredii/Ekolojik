@@ -1,0 +1,76 @@
+// Sayfa geçişi
+function showSection(section) {
+    // Tüm bölümleri gizle
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((sec) => {
+        sec.style.display = 'none';
+    });
+
+    // İlgili bölümü göster
+    const targetSection = document.getElementById(section);
+    if (targetSection) {
+        targetSection.style.display = 'block';
+    }
+}
+
+// Hamburger menüsünü açma ve kapama
+function toggleMenu() {
+    const menuContent = document.getElementById("menu-content");
+    if (menuContent.style.display === "block") {
+        menuContent.style.display = "none";
+    } else {
+        menuContent.style.display = "block";
+    }
+}
+
+// Kayıt formu verilerini localStorage'a kaydet
+document.getElementById("registerForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Sayfanın yenilenmesini engelle
+
+    const name = document.getElementById("name").value;
+    const surname = document.getElementById("surname").value;
+    const email = document.getElementById("email").value;
+    const school = document.getElementById("school").value;
+    const city = document.getElementById("city").value;
+    const district = document.getElementById("district").value;
+    const schoolNumber = document.getElementById("schoolNumber").value;
+
+    // Verileri localStorage'a kaydet
+    localStorage.setItem("userData", JSON.stringify({
+        name, surnamename, surname, email, school, city, district, schoolNumber
+    }));
+
+    alert("Kayıt başarıyla yapıldı!");
+    showSection('veri-giris'); // Kayıt yapıldıktan sonra veri girişine geç
+});
+
+// Veri giriş formunu işleme
+document.getElementById("dataForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Sayfanın yenilenmesini engelle
+
+    const wasteType = document.getElementById("wasteType").value;
+    const wasteAmount = document.getElementById("wasteAmount").value;
+
+    // Kullanıcının atık verilerini localStorage'a kaydet
+    let wasteData = JSON.parse(localStorage.getItem("wasteData")) || [];
+    wasteData.push({ wasteType, wasteAmount });
+
+    localStorage.setItem("wasteData", JSON.stringify(wasteData));
+
+    alert("Veri başarıyla kaydedildi!");
+    showSection('bilgilendirme'); // Veriyi kaydettikten sonra bilgilendirmeye geç
+});
+
+// Sayfa yüklemesi ile kullanıcı verilerini ve atık verilerini gösterme
+window.onload = function () {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const wasteData = JSON.parse(localStorage.getItem("wasteData"));
+
+    if (userData) {
+        console.log("Kullanıcı Verisi: ", userData);
+    }
+
+    if (wasteData) {
+        console.log("Atık Verisi: ", wasteData);
+    }
+};
